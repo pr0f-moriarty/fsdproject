@@ -1,0 +1,29 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+server:
+  port: 9999
+
+spring:
+  application:
+    name: Feign-hystrix
+  datasource:
+    password: Komal06@#10
+    url: jdbc:mysql://localhost:3306/project
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  cloud:
+    config:
+       uri: http://localhost:8888/  
