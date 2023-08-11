@@ -29,12 +29,11 @@ public class HRLoginController
 	@Autowired
 	HRLoginService service;
 	
-	
 	@PostMapping("/create-hr")
 	public HR createHr(@RequestBody HR hr) {
 		return service.createHR(hr);
 	}
-	
+		
 	@RequestMapping(method = RequestMethod.POST, value = "/login")
 	HR verifyUser(@RequestBody HR hr ) {
 		System.out.println("entered controller");
@@ -47,6 +46,7 @@ public class HRLoginController
 		return ResponseEntity.status(HttpStatus.OK).body(ul);
 		 
 	}
+	
 		
 	@RequestMapping(method = RequestMethod.PATCH, value = "/updateHR")
 	void updateHR(@RequestBody HR hr) 
@@ -61,7 +61,7 @@ public class HRLoginController
 	    	//HR hr = service.getHRById(id);
 	    	return service.getHRById(id);
 	 }
-	 @DeleteMapping("/hrdelete/id")
+	 @DeleteMapping("/hrdelete/{id}")
 	 public ResponseEntity<?> delete(@PathVariable("id") int id)
 	 {
 		 if(service.getHRById(id)!=null)

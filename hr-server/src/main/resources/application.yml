@@ -1,7 +1,7 @@
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
@@ -12,7 +12,7 @@ management:
       exposure:
         include: '*'
 server:
-  port: 8277
+  port: 0
 spring:
   application:
     name: HR-Service
