@@ -1,0 +1,37 @@
+logging:
+  level:
+    netgloo: DEBUG
+server:
+  port: 8088
+spring:
+  application:
+    name: main-skills-tracker
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        storage:
+          engine: innodb
+
+  #mail:
+   # host: smtp.gmail.com
+    #password: skilltracker@123
+  #  properties:
+   #   mail:
+    #    smtp:
+    #      auth: true
+    #      socketFactory:
+     #       class: javax.net.ssl.SSLSocketFactory
+     #       fallback: false
+     #       port: 465
+   # username: skilltracker1gmail.com
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
